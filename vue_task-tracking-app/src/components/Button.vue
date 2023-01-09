@@ -1,17 +1,29 @@
 <template>
-    <button>{{label}}</button>
+    <button @click="onClickeed()">{{label}}</button>
 </template>
 
 <script>
 
 export default {
     name: 'Button',
-    props: ['label']
+    props: ['label'],
+
+    methods: {
+    onClickeed() {
+        document.getElementById()
+    },
+},
+
+
 }
 </script>
 
 <style scoped>
 button {
+    width: 100px;
+    height: 48px;
+    margin: 10px;
+    border-radius: 10px;
     border: none;
     outline: none;
     color: white;

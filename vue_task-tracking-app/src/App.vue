@@ -2,18 +2,57 @@
   <div class="container">
     <Header/>
     <Modal/>
+    <Tasks :sometasks="tasks"/>
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
 import Modal from './components/Modal.vue'
+import Tasks from './components/Tasks.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Modal
+    Modal,
+    Tasks,
+  },
+
+  data() {
+    return {
+      tasks:[]
+    }
+  },
+  created() {
+    this.tasks = [
+      {
+        id:1,
+        text: 'Go to the beach',
+        date: 'March 1st at 2:30pm',
+        reminder: false,
+      },
+      {
+        id:1,
+        text: 'Go to the Pitch',
+        date: 'March 1st at 2:30pm',
+        reminder: true,
+      },
+      {
+        id:1,
+        text: 'Get Jogging Time',
+        date: 'March 1st at 2:30pm',
+        reminder: false,
+      },
+      {
+        id:1,
+        text: 'Go to the party',
+        date: 'March 1st at 2:30pm',
+        reminder: true,
+        icon: './assets/logo.png'
+      },
+
+    ]
   }
 }
 </script>

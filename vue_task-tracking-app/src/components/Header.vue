@@ -39,6 +39,6 @@ h3 {
     color: green;
 }
 button {
-    
+    padding: 0;
 }
 </style>
