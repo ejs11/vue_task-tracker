@@ -1,16 +1,19 @@
 <template>
   <div class="container">
     <Header/>
+    <Modal/>
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
+import Modal from './components/Modal.vue'
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Modal
   }
 }
 </script>
@@ -33,5 +36,16 @@ export default {
   border: none;
   box-sizing: border-box;
   box-shadow: 3px 2px 3px 2px gray;
+}
+Button {
+  
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: 600;
+    text-shadow: 0.1em 0.1em 0.3em black;
+    box-sizing: border-box;
+    background-color: green;
+
 }
 </style>

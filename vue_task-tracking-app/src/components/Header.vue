@@ -7,6 +7,7 @@
 
 <script>
 import Button from './Button.vue'
+import Modal from './Modal.vue'
 
 export default {
     name: 'Header',
@@ -18,6 +19,7 @@ export default {
     },
     components: {
         Button,
+        Modal,
     }
 }
 </script>
@@ -35,5 +37,8 @@ h3 {
     width: 30%;
     padding: 5px;
     color: green;
+}
+button {
+    
 }
 </style>
