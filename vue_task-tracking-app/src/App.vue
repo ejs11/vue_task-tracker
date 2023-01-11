@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <Header/>
-    <Modal/>
-    <Tasks :sometasks="tasks"/>
+    <Modal @add-task="addTask"/>
+    <Tasks @toggle-reminder="toggleReminder" @delete-task="deleteTask" :sometasks="tasks"/>
   </div>
 </template>
 
@@ -24,6 +24,18 @@ export default {
       tasks:[]
     }
   },
+
+  methods: {
+      deleteTask(id) {
+        if(confirm('Are you sure?'))
+      this.tasks = this.tasks.filter((task) => task.id !== id)},
+      toggleReminder(id) {
+        this.tasks = this.tasks.map((task) => task.id == id ? {...task, reminder: !task.reminder} : task)
+      },
+      addTask(newTask) {
+        this.tasks =[...this.tasks, newTask]
+      }
+  },
   created() {
     this.tasks = [
       {
@@ -33,19 +45,19 @@ export default {
         reminder: false,
       },
       {
-        id:1,
+        id:2,
         text: 'Go to the Pitch',
         date: 'March 1st at 2:30pm',
         reminder: true,
       },
       {
-        id:1,
+        id:3,
         text: 'Get Jogging Time',
         date: 'March 1st at 2:30pm',
         reminder: false,
       },
       {
-        id:1,
+        id:4,
         text: 'Go to the party',
         date: 'March 1st at 2:30pm',
         reminder: true,

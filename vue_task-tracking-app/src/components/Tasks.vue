@@ -1,7 +1,7 @@
 <template>
     <div class="tasks_container">
     <div class="Tasks" :key="task.id" v-for="task in sometasks">
-        <Task  :task = "task"/>
+        <Task @toggle-reminder="$emit('toggle-reminder', task.id)"  @delete-task="$emit('delete-task', task.id)" :task = "task"/>
         
     </div>
     </div>
@@ -17,7 +17,8 @@ export default {
     },
     components: {
         Task
-    }
+    },
+    emits: ['delete-task','toggle-reminder']
 }
 
 </script>
@@ -25,11 +26,13 @@ export default {
 
 <style scoped>
 .tasks_container {
+    display: flex;
+    flex-direction: column-reverse;
     margin-top: 100px;
 }
 .Tasks{
     background-color: aliceblue;
     margin: 5px 0px;
+    transition: all 5s;
 }
-
 </style>

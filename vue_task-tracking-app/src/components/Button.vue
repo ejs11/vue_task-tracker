@@ -10,7 +10,7 @@ export default {
 
     methods: {
     onClickeed() {
-        document.getElementById()
+        console.log("clicked")
     },
 },
 

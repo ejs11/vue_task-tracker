@@ -1,20 +1,20 @@
 <template>
     <div id="modal" style="display:none">
-        <form action="">
+        <form @submit="onSubmit" action="">
             <div id="title">
             <label for="">Title:</label>
-            <input type="text" name="" id=""></div>
+            <input type="text" name="" v-model="text" id=""></div>
 
             <div id="date">
             <label for="">Date:</label>
-            <input type="datetime-local" name="" placeholder=" 0000" id=""></div>
+            <input type="datetime" name="" v-model="date" placeholder="Date, Time" id=""></div>
 
             <div id="check">
-                <input type="checkbox" name="" id=""><span>Set Reminder</span>
+                <input type="checkbox" name="" id="" v-model="reminder"><span>Set Reminder</span>
             </div>
 
             <div class="btn">
-                <Button label="Save Your Task"/>
+                <Button type="submit" label="Save Your Task"/>
             </div>
         </form>
     </div>
@@ -30,6 +30,33 @@ export default {
     name: 'Modal',
     components: {
         Button
+    },
+    data() {
+        return {
+            text: '',
+            date: '',
+            reminder: false
+        }
+    },
+    methods: {
+        onSubmit(e) {
+            e.preventDefault()
+            if(!this.text) {
+                alert('Please add task');
+                return
+            }
+
+            const newTask = {
+                id: Math.floor(Math.random() * 10000),
+                text: this.text,
+                date: this.date,
+                reminder: this.reminder
+            }
+            this.$emit('add-task', newTask)
+            this.text = ''
+            this.date = ''
+            this.reminder = ''
+        }
     }
 }
 </script>
@@ -60,6 +87,7 @@ input, textarea , label{
 }
 input, label {
     margin-left: -40px;
+    text-align: center;
 }
 label {
     border: none;
