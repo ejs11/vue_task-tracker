@@ -1,19 +1,16 @@
 <template>
-    <button @click="onClickeed()">{{label}}</button>
+    <button @click="$emit('toggle-add-task')">{{label}}</button>
 </template>
 
 <script>
 
+
 export default {
     name: 'Button',
-    props: ['label'],
-
-    methods: {
-    onClickeed() {
-        console.log("clicked")
-    },
-},
-
+    props: {
+        label: String,
+        color: String
+        }
 
 }
 </script>

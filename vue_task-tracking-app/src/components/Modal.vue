@@ -1,5 +1,5 @@
 <template>
-    <div id="modal" style="display:none">
+    <div id="modal">
         <form @submit="onSubmit" action="">
             <div id="title">
             <label for="">Title:</label>

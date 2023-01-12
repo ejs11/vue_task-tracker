@@ -1,7 +1,10 @@
 <template>
     <header>
         <h3>{{title}}</h3>
-        <Button label="Add Task"/>
+        <Button 
+        @click="$emit('toggle-add-task')" :label = "showAddTask ? 'Close' : 'Add'"
+        :color = " showAddTask ? 'background=green' : 'background=red'"
+         label="Add Task"/>
     </header>
 </template>
 
@@ -16,6 +19,7 @@ export default {
             type: String,
             default: 'Tasks App',
         },
+        showAddTask: Boolean
     },
     components: {
         Button,
