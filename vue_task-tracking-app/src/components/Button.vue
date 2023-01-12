@@ -1,5 +1,5 @@
 <template>
-    <button @click="$emit('toggle-add-task')">{{label}}</button>
+    <button @click="$emit('toggle-add-task')" :style="{background:color}">{{label}}</button>
 </template>
 
 <script>
@@ -9,15 +9,18 @@ export default {
     name: 'Button',
     props: {
         label: String,
-        color: String
-        }
+        color : {
+            type: String,
+            color: 'red'
+        }}
+        
 
 }
 </script>
 
 <style scoped>
 button {
-    width: 100px;
+    width: 120px;
     height: 48px;
     margin: 10px;
     border-radius: 10px;

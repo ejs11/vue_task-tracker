@@ -28,7 +28,7 @@ export default {
 .tasks_container {
     display: flex;
     flex-direction: column-reverse;
-    margin-top: 100px;
+    margin-top: 10px;
 }
 .Tasks{
     background-color: aliceblue;

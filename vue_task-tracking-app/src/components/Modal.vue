@@ -47,7 +47,7 @@ export default {
             }
 
             const newTask = {
-                id: Math.floor(Math.random() * 10000),
+               // id: Math.floor(Math.random() * 10000),
                 text: this.text,
                 date: this.date,
                 reminder: this.reminder
@@ -65,11 +65,12 @@ export default {
 * {
     box-sizing: border-box;
     margin: 10px;
-    padding: 3px;
+   
 }
 form {
+    padding: 10px;
     width: 100%;background-color: antiquewhite;
-    text-align: center;margin: 0px;border: 2px solid navajowhite;
+    text-align: center;;border: 2px solid navajowhite;
     
 }
 form > div {
@@ -81,12 +82,12 @@ input, textarea , label{
     width: 180px;
     max-width: 200px;
     border: 1px solid green;
-    padding: 10px;
+    padding: 5px;
     border-radius:10px ;
     color: gray;
 }
 input, label {
-    margin-left: -40px;
+    margin-left: -50px;
     text-align: center;
 }
 label {
@@ -94,13 +95,15 @@ label {
     color: black;
 }
 #modal {
-    width: 100%;;margin: 0px auto;display: block;padding: 0;
+    border: 1px solid red;
+    width: 100%;;margin: 0px auto;padding: 10px;
     margin-top: 20px;box-shadow: 2px 3px 2px navajowhite;
     
     
 }
-.btn Button {
-    padding: 10px 5px;margin: auto;
+Button {
+    height: 35px;
+    margin: auto;
     box-shadow: 2px 2px 3px gray;
 }
 #check {
